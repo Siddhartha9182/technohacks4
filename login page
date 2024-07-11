@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+</head>
+<body id="body">
+    <div class="input-box">
+        <input type="email" name="email" id="email" placeholder="Email"><br><br>
+        <div class="container">
+            <input type="password" placeholder="Password" id="password">
+            <img src="eye-close.png" alt="Downlad image from GitHub" id="eyeIcon">
+        </div>
+        <br><br>
+        <BUtton class="login" id="loginBtn" >Login</BUtton>
+    </div>
+</body>
+</html>
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+body{
+    background-color: rgb(3, 49, 88);
+}
+.input-box{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .input-box input{
+            padding: 20px;
+            font-size: 30px;
+            border-radius: 10px;
+            border-color: transparent;
+}
+.container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    cursor: pointer;
+}
+.container img{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    padding-bottom: 14px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+#password {
+    width: 300px;
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+}
+::-webkit-input-placeholder { 
+    color: rgb(7, 35, 77);
+    opacity: 1; 
+}
+::-moz-placeholder { 
+    color: rgb(7, 35, 77);
+    opacity: 1; 
+}
+:-ms-input-placeholder { 
+    color: rgb(7, 35, 77);
+    opacity: 1; 
+}
+::-ms-input-placeholder { 
+    color: rgb(7, 35, 77);
+    opacity: 1; 
+}
+::placeholder { 
+    color: rgb(7, 35, 77);
+    opacity: 1; 
+}
+.login{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border-color: transparent;
+}
+.login:hover{
+background-color: rgb(33, 106, 201);
+}
+
+#password{
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+   }
+let eyeIcon = document.getElementById("eyeIcon");
+let password = document.getElementById("password");
+let email = document.getElementById("email");
+let loginBtn = document.getElementById("loginBtn");
+let body = document.getElementById("body");
+eyeIcon.onclick = function () {
+  if (password.type == "password") {
+    password.type = "text";
+    eyeIcon.src = "eye-open.png";
+  } else {
+    password.type = "password";
+    eyeIcon.src = "eye-close.png" ;
+  }
+};
+
+loginBtn.onclick = function(){
+  if(email.type == "email" && password.type == "password") {
+    alert("You have successfully logged in");
+    body.style.backgroundColor = "green";
+  }else{
+    body.style.backgroundColor = "red";
+    alert("Please enter valid your email or password");
+  }
+   
+}
+
+
